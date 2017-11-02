@@ -1,9 +1,9 @@
 var $ = document.querySelectorAll.bind(document)
 
 var waveform = 0;
-var tempo = 200;
-var reverse = false;
-var play = true;
+var tempo = $("#tempo")[0].value;
+var reverse = $("#reverse")[0].checked;
+var play = $("#play")[0].checked;
 
 var table = $("#table");
 var columns = $("#table > colgroup > col");
@@ -19,13 +19,18 @@ for(var i = 0; i < oscillators.length; i++) {
 	oscillators[i] = context.createOscillator();
 	oscillators[i].type = "sine";
 	oscillators[i].frequency.value = 440 + (i - oscillators.length / 2) * 10;
-	//oscillators[i].connect(context.destination);
 	oscillators[i].playing = false;
+	oscillators[i].gain = context.createGain();
+	oscillators[i].gain.gain.value = 0.0001;
+	oscillators[i].connect(oscillators[i].gain);
+	oscillators[i].gain.connect(context.destination);
 	oscillators[i].start();
 }
 
 var Update = function(timestamp) {
-	pointer = (pointer + 1) % columns.length;
+	if(!play) return;
+
+	pointer = (pointer + (reverse ? -1 : 1) + columns.length) % columns.length;
 	
 	for(var i = 0; i < columns.length; i++) columns[i].classList.remove("active");
 	columns[pointer].classList.add("active");
@@ -33,12 +38,12 @@ var Update = function(timestamp) {
 	for(var i = 0; i < rows.length; i++) {
 		if(rows[i].children[pointer].children[0].checked) {
 			if(!oscillators[i].playing) {
-				oscillators[i].connect(context.destination);
+				oscillators[i].gain.gain.exponentialRampToValueAtTime(1, context.currentTime + 0.05);
 				oscillators[i].playing = true;
 			}
 		} else {
 			if(oscillators[i].playing) {
-				oscillators[i].disconnect(context.destination);
+				oscillators[i].gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.05);
 				oscillators[i].playing = false;
 			}
 		}
@@ -47,3 +52,11 @@ var Update = function(timestamp) {
 
 var intervalID = setInterval(Update, tempo);
 
+$("#reverse")[0].addEventListener("change", e => reverse = e.target.checked);
+$("#tempo")[0].addEventListener("change", e => {
+	tempo = 60 / e.target.value * 1000;
+	clearInterval(intervalID);
+	intervalID = setInterval(Update, tempo);
+});
+
+$("#play")[0].addEventListener("change", e => play = e.target.checked);
