@@ -1,4 +1,7 @@
-var $ = document.querySelectorAll.bind(document)
+var $ = document.querySelectorAll.bind(document);
+
+// To allow multi-touch
+document.addEventListener('contextmenu', event => event.preventDefault());
 
 var waveform = 0;
 var tempo = $("#tempo")[0].value;
@@ -18,10 +21,10 @@ var oscillators = new Array(8);
 for(var i = 0; i < oscillators.length; i++) {
 	oscillators[i] = context.createOscillator();
 	oscillators[i].type = "sine";
-	oscillators[i].frequency.value = 440 + (i - oscillators.length / 2) * 10;
+	oscillators[i].frequency.value = 440 + (i - oscillators.length / 2) * 20;
 	oscillators[i].playing = false;
 	oscillators[i].gain = context.createGain();
-	oscillators[i].gain.gain.value = 0.0001;
+	oscillators[i].gain.gain.value = 0.00001;
 	oscillators[i].connect(oscillators[i].gain);
 	oscillators[i].gain.connect(context.destination);
 	oscillators[i].start();
@@ -33,17 +36,20 @@ var Update = function(timestamp) {
 	pointer = (pointer + (reverse ? -1 : 1) + columns.length) % columns.length;
 	
 	for(var i = 0; i < columns.length; i++) columns[i].classList.remove("active");
-	columns[pointer].classList.add("active");
+	for(var y = 0; y < rows.length; y++) {
+		for(var x = 0; x < rows[y].children.length; x++) rows[y].children[x].classList.remove("active");
+		rows[y].children[pointer].classList.add("active");
+	}
 	
 	for(var i = 0; i < rows.length; i++) {
-		if(rows[i].children[pointer].children[0].checked) {
+		if(rows[i].children[pointer].children[0].children[0].checked) {
 			if(!oscillators[i].playing) {
 				oscillators[i].gain.gain.exponentialRampToValueAtTime(1, context.currentTime + 0.05);
 				oscillators[i].playing = true;
 			}
 		} else {
 			if(oscillators[i].playing) {
-				oscillators[i].gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.05);
+				oscillators[i].gain.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 0.05);
 				oscillators[i].playing = false;
 			}
 		}

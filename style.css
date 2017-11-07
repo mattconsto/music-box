@@ -1,3 +1,56 @@
-.active {
-	background-color: red;
+body {
+	background: #0f0f0f;
+	color: #efefef;
+	font-family: Arial;
+}
+
+#container {
+	max-width: 33.75em;
+	margin: 0 auto;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+#table {
+	font-size: 4em;
+}
+
+#table label > span {
+	display: block;
+}
+
+label > span {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	border-radius: 0.25em;
+	background: #bbbbbb;
+	cursor: pointer;
+}
+
+label:hover > span {
+	background: #eeeeee;
+}
+
+label > input[type="checkbox"] {
+	display: none;
+}
+
+label > input[type="checkbox"]:checked + span {
+	background: #2200aa;
+}
+
+label:hover > input[type="checkbox"]:checked + span {
+	background: #2200ee;
+}
+
+.active label > input[type="checkbox"] + span {
+	background: #aa2200;
+}
+
+.active label:hover > input[type="checkbox"] + span {
+	background: #ee2200;
 }

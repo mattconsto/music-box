@@ -5,114 +5,118 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<h1>Music Box</h1>
+		<div id="container">
+			<h1>Music Box</h1>
 
-		<p>
-			<select id="waveform" disabled>
-				<option>Sine Wave</option>
-			</select>
+			<nav>
+				<select id="waveform" disabled>
+					<option>Sine Wave</option>
+				</select>
 
-			<input type="range" id="tempo" min="10" max="1200" value="120" />
+				<label><input type="range" id="tempo" min="10" max="1200" value="120" /> Tempo</label>
 
-			<input type="checkbox" id="reverse" />
-			
-			<input type="checkbox" id="play" checked />
-		</p>
+				<label><input type="checkbox" id="reverse" /><span></span> Reverse</label>
+				
+				<label><input type="checkbox" id="play" checked /><span></span> Play</label>
+			</nav>
 
-		<table id="table">
-			<colgroup>
-				<col />
-				<col />
-				<col class="active" />
-				<col />
-				<col />
-				<col />
-				<col />
-				<col />
-			</colgroup>
-			<tbody>
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-					<td><input type="checkbox" /></td>
-				</tr>
-			</tbody>
-		</table>
+			<br />
+
+			<table id="table">
+				<colgroup>
+					<col />
+					<col />
+					<col class="active" />
+					<col />
+					<col />
+					<col />
+					<col />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+					</tr>
+					<tr>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+						<td><label><input type="checkbox" /><span></span></label></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
 		<script src="script.js"></script>
 	</body>
