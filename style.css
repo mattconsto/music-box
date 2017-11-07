@@ -9,6 +9,11 @@ body {
 	margin: 0 auto;
 }
 
+small {
+	font-size: 0.5em;
+	opacity: 0.75;
+}
+
 nav {
 	display: flex;
 	justify-content: space-between;
