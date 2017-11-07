@@ -53,9 +53,13 @@ label:hover > input[type="checkbox"]:checked + span {
 }
 
 .active label > input[type="checkbox"] + span {
+	background: #aa7777;
+}
+
+.active label > input[type="checkbox"]:checked + span {
 	background: #aa2200;
 }
 
-.active label:hover > input[type="checkbox"] + span {
+.active label:hover > input[type="checkbox"]:checked + span {
 	background: #ee2200;
 }
