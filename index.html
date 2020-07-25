@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8" />
 		<title>Music Box</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<div id="container">
-			<h1>Music Box <small><a href="https://consto.uk/">By Matt Consto</a></small></h1>
+			<h1 style="margin-top: 0">Music Box <small><a href="https://consto.uk/">By Matthew Consterdine</a></small></h1>
 
 			<nav>
 				<select id="waveform" disabled>
 					<option>Sine Wave</option>
 				</select>
 
-				<label><input type="range" id="tempo" min="10" max="1200" value="120" /> Tempo</label>
+				<label><input type="range" id="tempo" min="10" max="1200" value="120" /></label>
 
-				<label><input type="checkbox" id="reverse" /><span></span> Reverse</label>
+				<label style="margin: 5px 0">Tempo</label>
+
+				<label style="margin: 5px 0"><input type="checkbox" id="reverse" /><span></span> Reverse</label>
 				
-				<label><input type="checkbox" id="play" checked /><span></span> Play</label>
+				<label style="margin: 5px 0"><input type="checkbox" id="play" checked /><span></span> Play</label>
 			</nav>
 
 			<br />
